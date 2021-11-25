@@ -1,4 +1,4 @@
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 
 import NavigationBar from "./components/NavigationBar";
 import Home from "./pages/Home";
@@ -6,31 +6,21 @@ import About from "./pages/About";
 import Schedule from "./pages/Schedule";
 import Competition from "./pages/Competition";
 import Contacts from "./pages/Contacts";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
     <div>
       <NavigationBar />
-      <Switch>
-        <Route path="/" exact>
-          <Redirect to="/Home" />
-        </Route>
-        <Route path="/Home">
-          <Home />
-        </Route>
-        <Route path="/About">
-          <About />
-        </Route>
-        <Route path="/Schedule">
-          <Schedule />
-        </Route>
-        <Route path="/Competition">
-          <Competition />
-        </Route>
-        <Route path="/Contacts">
-          <Contacts />
-        </Route>
-      </Switch>
+      <Routes>
+        <Route path="/" element={<Navigate to="/Home" />} />
+        <Route path="/Home" element={<Home />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Schedule" element={<Schedule />} />
+        <Route path="/Competition" element={<Competition />} />
+        <Route path="/Contacts" element={<Contacts />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </div>
   );
 }
