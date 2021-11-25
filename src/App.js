@@ -1,6 +1,29 @@
+import { Route } from 'react-router-dom';
+
+import Home from './pages/Home';
+import About from './pages/About';
+import Schedule from './pages/Schedule';
+import Competition from './pages/Competition';
+import Contacts from './pages/Contacts';
+
 function App() {
   return (
     <div>
+      <Route path="/Home">
+        <Home />
+      </Route>
+      <Route path="/About">
+        <About />
+      </Route>
+      <Route path="/Schedule">
+        <Schedule />
+      </Route>
+      <Route path="/Competition">
+        <Competition />
+      </Route>
+      <Route path="/Contacts">
+        <Contacts />
+      </Route>
     </div>
   );
 }
