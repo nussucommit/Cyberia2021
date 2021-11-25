@@ -1,5 +1,6 @@
 import { Route } from 'react-router-dom';
 
+import NavigationBar from './components/NavigationBar';
 import Home from './pages/Home';
 import About from './pages/About';
 import Schedule from './pages/Schedule';
@@ -9,6 +10,7 @@ import Contacts from './pages/Contacts';
 function App() {
   return (
     <div>
+      <NavigationBar />
       <Route path="/Home">
         <Home />
       </Route>
