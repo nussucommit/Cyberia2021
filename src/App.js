@@ -1,4 +1,4 @@
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 
 import NavigationBar from "./components/NavigationBar";
 import Home from "./pages/Home";
@@ -12,6 +12,9 @@ function App() {
     <div>
       <NavigationBar />
       <Switch>
+        <Route path="/" exact>
+          <Redirect to="/Home" />
+        </Route>
         <Route path="/Home">
           <Home />
         </Route>
