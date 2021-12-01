@@ -1,11 +1,29 @@
-import React from 'react'
+import Section from "../components/Section";
+import CenteredImage from "../components/CenteredImage";
+import styled from "styled-components";
 
-function NotFound() {
-    return (
-        <div>
-            The page you looking for does not exist. Please return to the home page.
-        </div>
-    )
+export default function NotFound() {
+  return (
+    <Section
+      info={
+        <>
+          <CenteredImage
+            source="./assets/images/404NotFound.svg"
+            alternateText="404 Page Not Found"
+          />
+          <br />
+          <Text>
+            We are sorry, the page you requested could not be found.
+            <br /> Please go back to the homepage.
+          </Text>
+        </>
+      }
+      justifyInfoContent="center"
+    />
+  );
 }
 
-export default NotFound
+const Text = styled.p`
+  color: white;
+  text-align: center;
+`
