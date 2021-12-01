@@ -6,6 +6,10 @@ import {
   DayThreeSchedule,
 } from "../data/ScheduleData";
 
+/**
+ * Event schedule page for Cyberia 2021 website.
+ * Summarizing the schedules for all three days of the event.
+ */
 export default function Schedule() {
   return (
     <Section
