@@ -1,54 +1,41 @@
-import React from 'react';
-import styled from "styled-components";
+import CenteredImage from "../components/CenteredImage";
+import ColoredText from "../components/ColoredText";
+import FlatButton from "../components/FlatButton";
+import Section from "../components/Section";
+import HomeImageList from "../data/HomeImageList";
 
-function Home() {
-    return (
-      <Wrap>
-        <Logo src="./images/Cyberia Silver Logo.png" alt="Cyberia 2021 Logo" />
-        <Button>Learn More</Button>
-      </Wrap>
-    );
+/**
+ * Home page for Cyberia 2021 Website.
+ * Summarizing the basic info and entries to other pages.
+ */
+export default function Home() {
+  return (
+    <Section
+      info={
+        <>
+          <CenteredImage
+            source="./assets/icons/Cyberia Silver Logo.png"
+            alternateText="Cyberia 2021"
+          />
+          <br />
+          <ColoredText
+            text="
+            Cyberia is an annual Adobe Photoshop boot camp organized by NUSSU
+            commIT, which aims to impart graphic design knowledge and skills to
+            the participants to strengthen their skill set. You will learn Adobe
+            Photoshop with training conducted by a certified professional Adobe
+            Photoshop trainer and a series of challenging and exciting games. At
+            the end of the camp, you will have the opportunity to put all the
+            skills you learn to test by producing an artwork in our competition
+            and stand to win attractive prizes!"
+          />
+          <br />
+          <FlatButton link="/Schedule" btnText="Event Schedule" />
+          <br />
+          <FlatButton link="/Competition" btnText="Competition Detail" />
+        </>
+      }
+      media={<HomeImageList />}
+    />
+  );
 }
-
-export default Home
-
-const Wrap = styled.div`
-  width: 100vw;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; // vertical
-  align-items: center; // horizontal
-  background-image: url("/images/Home_BG.jpg");
-`
-
-const Logo = styled.img`
-  padding-top: 15vh;
-  text-align: center;
-  max-width: 100%;
-  height: auto;
-`
-
-const Button = styled.div`
-  // Button Container
-  height: 40px;
-  width: 256px;
-  border-radius: 100px;
-  margin: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: white;
-  opacity: 0.65;
-  cursor: pointer;
-
-  // Button Text
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: 600;
-  color: black;
-  
-`
