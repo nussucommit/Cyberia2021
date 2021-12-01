@@ -2,6 +2,10 @@ import Section from "../components/Section";
 import CenteredImage from "../components/CenteredImage";
 import styled from "styled-components";
 
+/**
+ * Not Found page for Cyberia 2021 website.
+ * This page only shows up when the user enters invalid path to the url domain.
+ */
 export default function NotFound() {
   return (
     <Section
