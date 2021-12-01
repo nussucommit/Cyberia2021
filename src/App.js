@@ -1,13 +1,17 @@
+import React, { Suspense } from "react";
+
 import { Routes, Route, Navigate } from "react-router-dom";
 import styled from "styled-components";
+import CircularProgress from "@mui/material/CircularProgress";
 
 import SocialMediaPanel from "./components/SocialMediaPanel";
-import About from "./pages/About";
-import Competition from "./pages/Competition";
-import Contacts from "./pages/Contact";
-import Home from "./pages/Home";
-import NotFound from "./pages/NotFound";
-import Schedule from "./pages/Schedule";
+
+const About = React.lazy(() => import("./pages/About"));
+const Competition = React.lazy(() => import("./pages/Competition"));
+const Contact = React.lazy(() => import("./pages/Contact"));
+const Home = React.lazy(() => import("./pages/Home"));
+const NotFound = React.lazy(() => import("./pages/NotFound"));
+const Schedule = React.lazy(() => import("./pages/Schedule"));
 
 /**
  * React app for Cyberia 2021 organized by NUSSU commIT.
@@ -19,15 +23,23 @@ function App() {
   return (
     <MajorContainer>
       <SocialMediaPanel />
-      <Routes>
-        <Route path="/" element={<Navigate to="/Home" />} />
-        <Route path="/Home" element={<Home />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/Schedule" element={<Schedule />} />
-        <Route path="/Competition" element={<Competition />} />
-        <Route path="/Contact" element={<Contacts />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <Suspense
+        fallback={
+          <Centered>
+            <CircularProgress />
+          </Centered>
+        }
+      >
+        <Routes>
+          <Route path="/" element={<Navigate to="/Home" />} />
+          <Route path="/Home" element={<Home />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/Schedule" element={<Schedule />} />
+          <Route path="/Competition" element={<Competition />} />
+          <Route path="/Contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
     </MajorContainer>
   );
 }
@@ -46,3 +58,9 @@ const MajorContainer = styled.div`
   align-items: center;
   background-image: url("/assets/images/Darkened Blue Paint.png");
 `;
+
+const Centered = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
