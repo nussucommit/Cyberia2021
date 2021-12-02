@@ -1,5 +1,6 @@
 import React, { Suspense } from "react";
 
+import { Helmet } from "react-helmet";
 import { Routes, Route, Navigate } from "react-router-dom";
 import styled from "styled-components";
 import CircularProgress from "@mui/material/CircularProgress";
@@ -22,6 +23,12 @@ const Schedule = React.lazy(() => import("./pages/Schedule"));
 function App() {
   return (
     <MajorContainer>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Cyberia 2021</title>
+        <link rel="canonical" href="https://www.cyberia2021.nussucommit.com/" />
+        <meta name="description" content="NUSSU commIT Cyberia 2021" />
+      </Helmet>
       <SocialMediaPanel />
       <Suspense
         fallback={
