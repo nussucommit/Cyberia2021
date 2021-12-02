@@ -26,7 +26,7 @@ function App() {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Cyberia 2021</title>
-        <link rel="canonical" href="https://www.cyberia2021.nussucommit.com/" />
+        <link rel="canonical" href="https://cyberia-2021.herokuapp.com/Home" />
         <meta name="description" content="NUSSU commIT Cyberia 2021" />
       </Helmet>
       <SocialMediaPanel />
