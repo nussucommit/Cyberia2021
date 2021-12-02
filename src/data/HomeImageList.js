@@ -6,7 +6,7 @@ export default function HomeImageList() {
   for (let i = 1; i <= 7; i++) {
     const image = (
       <CenteredImage key={i}
-        source={`./assets/images/showcase${i}.jpg`}
+        source={`./assets/images/showcase${i}.JPG`}
         alternateText={`Cyberia Showcase ${i}`}
       />
     );
