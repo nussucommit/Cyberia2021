@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Fade from "react-reveal";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
-import TableCell, { tableCellClasses } from '@mui/material/TableCell';
+import TableCell, { tableCellClasses } from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
@@ -31,6 +31,20 @@ const StyledTableRow = styled(TableRow)(() => ({
 export default function BasicTable({ title, schedule }) {
   const eventSchedule = schedule;
 
+  const italicized = (program) => {
+    const hasKeyWord = program.includes("Prism of Endless Possibilities");
+    const hasAnotherKeyWord = program.includes("Prism");
+
+    return hasKeyWord 
+    ? <p>
+        <Italic>{program.substring(0, 30)}</Italic>
+        {program.substring(30)}
+      </p>
+    : hasAnotherKeyWord 
+    ? <p><Italic>{program.substring(0, 5)}</Italic>{program.substring(5)}</p> 
+    : program;
+  };
+
   return (
     <Fade bottom>
       <br />
@@ -58,11 +72,11 @@ export default function BasicTable({ title, schedule }) {
                   {row.time}
                 </StyledTableCell>
                 <StyledTableCell align="center">{row.duration}</StyledTableCell>
-                <StyledTableCell align="center">{row.program}</StyledTableCell>
+                <StyledTableCell align="center">
+                  {italicized(row.program)}
+                </StyledTableCell>
                 {title === "Day 2" && (
-                  <StyledTableCell align="center">
-                    {row.venue}
-                  </StyledTableCell>
+                  <StyledTableCell align="center">{row.venue}</StyledTableCell>
                 )}
               </StyledTableRow>
             ))}
@@ -76,4 +90,8 @@ export default function BasicTable({ title, schedule }) {
 const TableTitle = styled.h2`
   text-align: center;
   color: white;
+`;
+
+const Italic = styled.p`
+  font-style: italic;
 `;

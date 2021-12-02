@@ -4,7 +4,7 @@ function createData(id, time, duration, program, venue) {
 
 export const DayOneSchedule = [
   createData("0101", "0930 – 1000", "30 min", "Participants join zoom"),
-  createData("0102", "1000 – 1100", "1 hr", "Opening speech + briefing"),
+  createData("0102", "1000 – 1100", "1 hr", "Opening speech + Briefing"),
   createData("0103", "1100 – 1135", "35 min", "Ice-breakers"),
   createData("0104", "1135 – 1235", "1 hr", "Lunch"),
   createData("0105", "1235 – 1435", "2 hr", "Training"),
@@ -23,17 +23,18 @@ export const DayOneSchedule = [
 
 export const DayTwoSchedule = [
   createData("0201", "0945 – 1000", "15 min", "Attendance taking", "E2 lab"),
-  createData("0202", "", "", "", ""),
+  createData("0202", "1000 - 1200", "2 hr", "Training", "E2 lab"),
   createData("0203", "1200 – 1300", "1 hr", "Lunch", "Techno Edge(FoE)"),
-  createData("0204", "", "", "", ""),
+  createData("0204", "1300 - 1500", "2 hr", "Training", "E2 lab"),
   createData("0205", "1500 - 1515", "15 min", "Break", "-"),
   createData("0206", "1515 – 1530", "15 min", "Competition briefing", "E2 lab"),
-  createData("0207", "", "", "", ""),
-  createData("0208", "1830 - 1945", "1 hr 15 min", "Dinner", "Techno Edge(FoE)"),
-  createData("0209", "1945 - 2000", "15 min", "Mass Games Briefing + Setup", "E2 Corridor"),
-  createData("0210", "2000 - 2120", "1 hr 20 min", "In-person mass games", "E2 lab/Corridor"),
-  createData("0211", "2120 - 2130", "10 min", "Buffer Time", "-"),
-  createData("0212", "2130 - 2230", "1 hr", "Prism Preparation", "E2 lab"),
+  createData("0207", "1530 - 1830", "3 hr", "Competition", "E2 lab"),
+  createData("0208", "1830 - 1835", "5 min", "Buffer time", "-"),
+  createData("0209", "1835 - 1945", "1 hr 10 min", "Dinner", "Techno Edge(FoE)"),
+  createData("0210", "1945 - 2000", "15 min", "Mass Games Briefing + Setup", "E2 Corridor"),
+  createData("0211", "2000 - 2120", "1 hr 20 min", "In-person mass games", "E2 lab/Corridor"),
+  createData("0212", "2120 - 2130", "10 min", "Buffer Time", "-"),
+  createData("0213", "2130 - 2230", "1 hr", "Prism Preparation", "E2 lab"),
 ];
 
 export const DayThreeSchedule = [
