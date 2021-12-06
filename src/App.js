@@ -67,6 +67,7 @@ const MajorContainer = styled.div`
 `;
 
 const Centered = styled.div`
+  flex: 9;
   display: flex;
   justify-content: center;
   align-items: center;
