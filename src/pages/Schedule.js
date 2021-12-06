@@ -15,9 +15,9 @@ export default function Schedule() {
     <Section
       info={
         <>
-          <BasicTable title="Day 1" schedule={DayOneSchedule} />
+          <BasicTable title="Day 1 (Online)" schedule={DayOneSchedule} />
           <BasicTable title="Day 2" schedule={DayTwoSchedule} />
-          <BasicTable title="Day 3" schedule={DayThreeSchedule} />
+          <BasicTable title="Day 3 (Online)" schedule={DayThreeSchedule} />
           <br />
         </>
       }
