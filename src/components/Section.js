@@ -1,7 +1,6 @@
 import styled, { css } from "styled-components";
 
 import ImageCredit from "./ImageCredit";
-import NavigationBar from "./NavigationBar";
 
 export default function Section({
   info,
@@ -11,33 +10,20 @@ export default function Section({
   displayMedia,
 }) {
   return (
-    <SectionContainer>
-      <NavigationBar />
-      <ContentContainer>
-        <InfoContainer
-          direction={infoDisplayDirection}
-          justifyContent={justifyInfoContent}
-        >
-          {info}
-        </InfoContainer>
-        <MediaContainer displayMedia={displayMedia}>
-          {media}
-          <ImageCredit />
-        </MediaContainer>
-      </ContentContainer>
-    </SectionContainer>
+    <ContentContainer>
+      <InfoContainer
+        direction={infoDisplayDirection}
+        justifyContent={justifyInfoContent}
+      >
+        {info}
+      </InfoContainer>
+      <MediaContainer displayMedia={displayMedia}>
+        {media}
+        <ImageCredit />
+      </MediaContainer>
+    </ContentContainer>
   );
 }
-
-const SectionContainer = styled.div`
-  height: 100vh;
-  flex: 9;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-`;
 
 const scrollBarStyles = css`
   ::-webkit-scrollbar {

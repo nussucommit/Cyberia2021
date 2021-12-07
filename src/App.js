@@ -5,6 +5,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import styled from "styled-components";
 import CircularProgress from "@mui/material/CircularProgress";
 
+import NavigationBar from "./components/NavigationBar";
 import SocialMediaPanel from "./components/SocialMediaPanel";
 
 const About = React.lazy(() => import("./pages/About"));
@@ -30,23 +31,26 @@ function App() {
         <meta name="description" content="cyberia 2021" />
       </Helmet>
       <SocialMediaPanel />
-      <Suspense
-        fallback={
-          <Centered>
-            <CircularProgress />
-          </Centered>
-        }
-      >
-        <Routes>
-          <Route path="/" element={<Navigate to="/Home" />} />
-          <Route path="/Home" element={<Home />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/Schedule" element={<Schedule />} />
-          <Route path="/Competition" element={<Competition />} />
-          <Route path="/Contact" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Suspense>
+      <SectionContainer>
+        <NavigationBar />
+        <Suspense
+          fallback={
+            <Centered>
+              <CircularProgress />
+            </Centered>
+          }
+        >
+          <Routes>
+            <Route path="/" element={<Navigate to="/Home" />} />
+            <Route path="/Home" element={<Home />} />
+            <Route path="/About" element={<About />} />
+            <Route path="/Schedule" element={<Schedule />} />
+            <Route path="/Competition" element={<Competition />} />
+            <Route path="/Contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
+      </SectionContainer>
     </MajorContainer>
   );
 }
@@ -71,4 +75,14 @@ const Centered = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`
+`;
+
+const SectionContainer = styled.div`
+  height: 100vh;
+  flex: 9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+`;
