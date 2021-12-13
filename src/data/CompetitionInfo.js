@@ -1,17 +1,21 @@
 import Typography from "@mui/material/Typography";
+import styled from "styled-components";
 
 export var competitionInfo = [];
 
 competitionInfo.push({
   key: <strong>Story</strong>,
-  value: <Typography>Doctor Strange is messing up the universe. The theme of the
-              competition is “What If - Disney”. Just a single change in the
-              plot can result in the entire movie changing in pivotal ways. What
-              if Rapunzel’s hair had the power to kill instead of healing
-              powers? What if Finding Nemo was a thriller? In the competition
-              “What If - Disney”, participants are to create a poster
-              reimagining numerous major events from the disney movies in
-              game-changing ways.</Typography>,
+  value: (
+    <Typography>
+      Doctor Strange is messing up the universe. The theme of the competition is
+      “What If - Disney”. Just a single change in the plot can result in the
+      entire movie changing in pivotal ways. What if Rapunzel’s hair had the
+      power to kill instead of healing powers? What if Finding Nemo was a
+      thriller? In the competition “What If - Disney”, participants are to
+      create a poster reimagining numerous major events from the disney movies
+      in game-changing ways.
+    </Typography>
+  ),
 });
 
 competitionInfo.push({
@@ -21,9 +25,10 @@ competitionInfo.push({
       Time allocation : 3 hours
       <br />
       <br />
-      The theme of the competition is “What If - Disney”. The groups are to
-      create a poster reimagining numerous major events from the disney movies
-      in game-changing ways.
+      The theme of the competition is “What If - Disney”. The participants are
+      to create a poster reimagining numerous major events from the disney
+      movies in game-changing ways. The theme will be chosen by group but the
+      competition would be done individually.
       <br />
       <br />
       Samples for the competition will be shown to the participants.
@@ -43,6 +48,9 @@ competitionInfo.push({
       Most Popular (will be decided via a voting system)
       <br />
       <br />
+      Rules:
+      <br />
+      <br />
       Participants are prohibited from asking committee members for help, nor
       are they allowed to download an existing Photoshop file online or from any
       other sources.
@@ -57,9 +65,9 @@ competitionInfo.push({
       <br />
       Participants are given 3 hours in total. When the time is up, participants
       would need to submit both psd (Photoshop) and pdf files to Google
-      Forms(for now). They should name their files with their OG names.
-      <br />
-      (Examples of naming will be shown later)
+      Forms(for now). Participants would also need to cite the resources that
+      they use. They should name their files with their OG name. (Eg.
+      OGname_Yourname)
     </Typography>
   ),
 });
@@ -102,6 +110,25 @@ competitionInfo.push({
       working knowledge of the tools used
       <br />
       [may add bonus grades]
+    </Typography>
+  ),
+});
+
+const ColoredLink = styled.a`
+  color: #09f3fd;
+`;
+
+competitionInfo.push({
+  key: <strong>Competition File Submission</strong>,
+  value: (
+    <Typography>
+      You may submit your competition files{" "}
+      <ColoredLink href="https://forms.gle/HvidP18592o8sxhXA" target="__blank">
+        here
+      </ColoredLink>
+      <br />
+      <br />
+      Deadline: before <strong>18:35</strong> on 18-12-2021
     </Typography>
   ),
 });
