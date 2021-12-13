@@ -39,7 +39,7 @@ competitionInfo.push({
       day of camp, based on the rewards mentioned below.
       <br />
       <br />
-      Rewards:
+      <strong>Rewards:</strong>
       <br />
       Best Overall Award
       <br />
@@ -48,8 +48,7 @@ competitionInfo.push({
       Most Popular (will be decided via a voting system)
       <br />
       <br />
-      Rules:
-      <br />
+      <strong>Rules:</strong>
       <br />
       Participants are prohibited from asking committee members for help, nor
       are they allowed to download an existing Photoshop file online or from any
