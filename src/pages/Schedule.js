@@ -1,3 +1,5 @@
+import Fade from "react-reveal";
+
 import Section from "../components/Section";
 import BasicTable from "../components/Table";
 import {
@@ -5,6 +7,21 @@ import {
   DayTwoSchedule,
   DayThreeSchedule,
 } from "../data/ScheduleData";
+import Alert from "@mui/material/Alert";
+import AlertTitle from "@mui/material/AlertTitle";
+import Button from "@mui/material/Button";
+
+const dayOneZoom = {
+  title: "Day 1",
+  link: "https://nus-sg.zoom.us/j/87567036836?pwd=ckY3TW1tVEZTSFV3bmNnODZ2ZXJEQT09",
+};
+
+const dayThreeZoom = {
+  title: "Day 3",
+  link: "https://nus-sg.zoom.us/j/82396300965?pwd=NCtmY3Z1TmdsTWFJRENoVWE4NWVEQT09",
+};
+
+const zoomLinks = [dayOneZoom, dayThreeZoom];
 
 /**
  * Event schedule page for Cyberia 2021 website.
@@ -15,6 +32,20 @@ export default function Schedule() {
     <Section
       info={
         <>
+          <Fade left>
+            {zoomLinks.map((zoomInfo, index) => (
+              <Alert severity="success">
+                <AlertTitle>{zoomInfo.title}</AlertTitle>
+                <Button
+                  href={zoomInfo.link}
+                  target="__blank"
+                  sx={{ color: "#006400" }}
+                >
+                  {`Click me to open ${zoomInfo.title} zoom link`}
+                </Button>
+              </Alert>
+            ))}
+          </Fade>
           <BasicTable title="Day 1 (Online)" schedule={DayOneSchedule} />
           <BasicTable title="Day 2" schedule={DayTwoSchedule} />
           <BasicTable title="Day 3 (Online)" schedule={DayThreeSchedule} />
