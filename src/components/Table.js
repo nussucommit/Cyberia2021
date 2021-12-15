@@ -28,21 +28,50 @@ const StyledTableRow = styled(TableRow)(() => ({
   },
 }));
 
+const italicizedWordList = [
+  {
+    keyWord: "The Watcher's Trial",
+    numToItalicized: 19,
+  },
+  {
+    keyWord: "Time Keepers of the Multiverse",
+    numToItalicized: 30,
+  },
+  {
+    keyWord: "Prism",
+    numToItalicized: 5,
+  },
+  {
+    keyWord: "Prism of Endless Possibilities",
+    numToItalicized: 30,
+  },
+  {
+    keyWord: "Champions of the Multiverse",
+    numToItalicized: 27,
+  },
+];
+
 export default function BasicTable({ title, schedule }) {
   const eventSchedule = schedule;
 
   const italicized = (program) => {
-    const hasKeyWord = program.includes("Prism of Endless Possibilities");
-    const hasAnotherKeyWord = program.includes("Prism");
+    const numOfItalicizedChar = italicizedWordList.reduce(
+      (currNum, programKeyWord) => {
+        return program.includes(programKeyWord.keyWord)
+          ? programKeyWord.numToItalicized
+          : currNum;
+      },
+      -1
+    );
 
-    return hasKeyWord 
-    ? <p>
-        <Italic>{program.substring(0, 30)}</Italic>
-        {program.substring(30)}
+    return numOfItalicizedChar !== -1 ? (
+      <p>
+        {<em>{program.substring(0, numOfItalicizedChar)}</em>}
+        {program.substring(numOfItalicizedChar)}
       </p>
-    : hasAnotherKeyWord 
-    ? <p><Italic>{program.substring(0, 5)}</Italic>{program.substring(5)}</p> 
-    : program;
+    ) : (
+      program
+    );
   };
 
   return (
@@ -90,8 +119,4 @@ export default function BasicTable({ title, schedule }) {
 const TableTitle = styled.h2`
   text-align: center;
   color: white;
-`;
-
-const Italic = styled.p`
-  font-style: italic;
 `;
