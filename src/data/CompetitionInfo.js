@@ -127,7 +127,7 @@ competitionInfo.push({
       </ColoredLink>
       <br />
       <br />
-      Deadline: before <strong>18:35</strong> on 18-12-2021
+      Deadline: before <strong>18:40</strong> on 18-12-2021
     </Typography>
   ),
 });
