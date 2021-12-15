@@ -1,4 +1,5 @@
 import Fade from "react-reveal";
+import styled from "styled-components";
 
 import Section from "../components/Section";
 import BasicTable from "../components/Table";
@@ -8,7 +9,6 @@ import {
   DayThreeSchedule,
 } from "../data/ScheduleData";
 import Alert from "@mui/material/Alert";
-import AlertTitle from "@mui/material/AlertTitle";
 import Button from "@mui/material/Button";
 
 const dayOneZoom = {
@@ -33,9 +33,11 @@ export default function Schedule() {
       info={
         <>
           <Fade left>
+            <Title>Zoom Links</Title>
+            <br />
             {zoomLinks.map((zoomInfo, index) => (
               <Alert severity="success">
-                <AlertTitle>{zoomInfo.title}</AlertTitle>
+                {/* <AlertTitle>{zoomInfo.title}</AlertTitle> */}
                 <Button
                   href={zoomInfo.link}
                   target="__blank"
@@ -57,3 +59,8 @@ export default function Schedule() {
     />
   );
 }
+
+const Title = styled.h2`
+  text-align: center;
+  color: white;
+`;
