@@ -28,13 +28,7 @@ export const DayOneSchedule = [
     "5 min",
     "Prism of Endless Possibilities Briefing"
   ),
-  createData(
-    "0116",
-    "2140 - 2145",
-    "5 min",
-    "Prism of Endless Possibilities Briefing"
-  ),
-  createData("0117", "2145 - 2230", "45 min", "Prism Preparation"),
+  createData("0116", "2145 - 2230", "45 min", "Prism Preparation"),
 ];
 
 export const DayTwoSchedule = [
